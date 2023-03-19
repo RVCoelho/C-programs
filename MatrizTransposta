@@ -15,6 +15,7 @@ int **geraTransposta(int **matriz, int lin, int col){
     }
     return transposta;
 }
+
 int main()
 {
     int l=3,c=3,i,j;

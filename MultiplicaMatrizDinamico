@@ -25,7 +25,6 @@ int **multiplicaMatriz(int **matriz1, int **matriz2, int lin1, int col1, int lin
 
 int main(){
     int l1=2,c1=4,i,j, l2=4, c2=3;
-    //int matriz[][]={{7,8,4},{2,1,7},{9,3,2}};
     int **matriz1 = (int **) calloc(l1, sizeof(int*));
     int **matriz2 = (int **) calloc(l2, sizeof(int*));
     int **C;

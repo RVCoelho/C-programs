@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-
+#include<time.h>
 int **multiplicaMatriz(int **matriz1, int **matriz2, int lin1, int col1, int lin2, int col2);
 
 int **multiplicaMatriz(int **matriz1, int **matriz2, int lin1, int col1, int lin2, int col2){
@@ -25,6 +25,7 @@ int **multiplicaMatriz(int **matriz1, int **matriz2, int lin1, int col1, int lin
 
 int main(){
     int l1=2,c1=4,i,j, l2=4, c2=3;
+    //int matriz[][]={{7,8,4},{2,1,7},{9,3,2}};
     int **matriz1 = (int **) calloc(l1, sizeof(int*));
     int **matriz2 = (int **) calloc(l2, sizeof(int*));
     int **C;
@@ -33,28 +34,17 @@ int main(){
     for(i=0;i<l2;i++)
         matriz2[i]=(int *) calloc(c2,sizeof(int));
     
-    matriz1[0][0]=7;
-    matriz1[0][1]=8;
-    matriz1[0][2]=4;
-    matriz1[0][3]=9;
-    matriz1[1][0]=2;
-    matriz1[1][1]=1;
-    matriz1[1][2]=7;
-    matriz1[1][3]=3;
-    
-    matriz2[0][0]=6;
-    matriz2[0][1]=9;
-    matriz2[0][2]=4;
-    matriz2[0][3]=2;
-    matriz2[1][0]=8;
-    matriz2[1][1]=4;
-    matriz2[1][2]=9;
-    matriz2[1][3]=4;
-    matriz2[2][0]=7;
-    matriz2[2][1]=3;
-    matriz2[2][2]=5;
-    matriz2[2][3]=1;
-    
+    srand(time(NULL));
+
+    for(i=0;i<l1;i++){
+        for(j=0;j<c1;j++)
+            matriz1[i][j]=rand()%10;
+    }
+
+    for(i=0;i<l2;i++){
+        for(j=0;j<c2;j++)
+            matriz2[i][j]=rand()%10;
+    }
     
     for(i=0;i<l1;i++){
         printf("[ ");
